@@ -14,10 +14,12 @@ async function fetchUser(){
       //call the function and pass argument
       displayData(object);
     }
+    //handle error
     catch(error){
       containers.innerHTML="<h1>Failed to load data...</h1>";
      console.log(error);
     }
+    //always execute
     finally{
         loader.style.display = "none";
     }
@@ -41,10 +43,9 @@ object.forEach((user)=>{
        <p><strong>City:</strong>${user.address.city}</p>
        <p><strong>Company:</strong>${user.company.name}</p>
         `;
+         //insert div element to container class
           containers.appendChild(card);
     });
-
- 
 }
 
 
